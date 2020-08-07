@@ -1,0 +1,44 @@
+{%extends 'vendors/main.html'%}
+
+{%block content%}
+
+<br>
+
+<div class="row">
+ 
+ <div class="col-md-7">
+  <h5>BRIEF DETAILS</h5>
+  <hr>
+  <div class="card card-body">
+   
+   <table class="table table-sm">
+    <tr>
+     <th>Vendor Name</th>
+     <th>Preferred Vendor</th>
+     <th>Number of Consultants on Payroll</th>
+     <th>Agreement Status</th>
+    </tr>
+    {% for vendor in vendors %}
+        <tr>
+          <td>{{vendor.name}}</td>
+          <td>{{vendor.preferred_vendor}}</td>
+          <td>{{vendor.no_of_consultants}}</td>
+          <td>{{vendor.agreement_status}}</td>
+        </tr>
+    {% endfor %}
+  
+   </table>
+  </div>
+ </div>
+
+</div>
+</br>
+<tr>
+  <td><a class="btn btn-sm btn-primary" href="{% url 'create' %}">Add Vendor</a></td>
+  <td><a class="btn btn-sm btn-primary" href="{% url 'contact' %}">Add Vendor Contact</a></td>
+</tr>
+
+
+{%endblock%}
+
+

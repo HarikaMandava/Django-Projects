@@ -1,0 +1,41 @@
+{%extends 'vendors/main.html'%}
+
+{%block content%}
+
+<br>
+
+<div class="row">
+ 
+ <div class="col-md-7">
+  <h5>VENDOR DETAILS</h5>
+  <hr>
+  <div class="card card-body">
+   
+   <table class="table table-sm">
+    <tr>
+     <th>Vendor Name</th>
+     <th>City</th>
+     <th>State</th>
+     <th>Agreement Status</th>
+     <th>Preferred Vendor</th>
+     <th>Date of Agreement</th>
+    </tr>
+    {% for vendor in vendors %}
+        <tr>
+          <td>{{vendor.name}}</td>
+          <td>{{vendor.city}}</td>
+          <td>{{vendor.state}}</td>
+          <td>{{vendor.agreement_status}}</td>
+          <td>{{vendor.preferred_vendor}}</td>
+          <td>{{vendor.date}}</td>
+          
+        </tr>
+    {% endfor %}
+  
+   </table>
+  </div>
+ </div>
+
+</div>
+{%endblock%}
+    
